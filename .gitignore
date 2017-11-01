@@ -1,0 +1,7 @@
+.idea/
+build/
+dist/
+pymeshviewer.egg-info/
+
+*.coverage
+*.pyc

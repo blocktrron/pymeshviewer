@@ -1,0 +1,407 @@
+{
+  "version": 2,
+  "timestamp": "2017-10-21T00:34:24+0200",
+  "nodes": [
+    {
+      "firstseen": "2016-11-27T03:52:55+0000",
+      "lastseen": "2017-10-21T00:33:50+0200",
+      "flags": {
+        "online": true,
+        "gateway": true
+      },
+      "statistics": {
+        "node_id": "daff61000302",
+        "clients": 0,
+        "loadavg": 1.11,
+        "memory_usage": 0.34640929437841284,
+        "uptime": 1463731.06,
+        "idletime": 2674140.98,
+        "processes": {
+          "total": 124,
+          "running": 4
+        },
+        "traffic": {
+          "tx": {
+            "bytes": 7400661063510,
+            "packets": 6481364061,
+            "dropped": 8402057
+          },
+          "rx": {
+            "bytes": 811005896638,
+            "packets": 4766761900
+          },
+          "forward": {
+            "bytes": 4729587096438,
+            "packets": 9701545372
+          },
+          "mgmt_tx": {
+            "bytes": 51533836800,
+            "packets": 145173118
+          },
+          "mgmt_rx": {
+            "bytes": 1429253469038,
+            "packets": 3289390848
+          }
+        }
+      },
+      "nodeinfo": {
+        "node_id": "daff61000302",
+        "network": {
+          "mac": "da:ff:61:00:03:02",
+          "addresses": [
+            "fe80::543a:9dff:fe11:4238",
+            "2001:67c:2ed8:6100::3",
+            "fd01:67c:2ed8:6100::3",
+            "fe80::d8ff:61ff:fe00:304"
+          ],
+          "mesh": {
+            "ffda-bat": {
+              "interfaces": {
+                "tunnel": [
+                  "da:ff:61:00:03:05",
+                  "da:ff:61:00:03:03",
+                  "da:ff:61:01:03:03"
+                ]
+              }
+            }
+          },
+          "mesh_interfaces": null
+        },
+        "system": {},
+        "hostname": "gw03.darmstadt.freifunk.net",
+        "software": {
+          "autoupdater": {},
+          "batman-adv": {
+            "version": "2017.3"
+          },
+          "fastd": {
+            "enabled": true,
+            "version": "v18"
+          },
+          "firmware": {
+            "base": "Debian",
+            "release": "8.9"
+          },
+          "status-page": {
+            "api": 0
+          }
+        },
+        "hardware": {
+          "nproc": 3
+        },
+        "vpn": true
+      }
+    },
+    {
+      "firstseen": "2016-11-30T02:15:04+0000",
+      "lastseen": "2017-10-21T00:33:50+0200",
+      "flags": {
+        "online": true,
+        "gateway": true
+      },
+      "statistics": {
+        "node_id": "daff61000402",
+        "clients": 0,
+        "loadavg": 0.57,
+        "memory_usage": 0.26971274868843076,
+        "uptime": 1125516.24,
+        "idletime": 1814244.58,
+        "processes": {
+          "total": 130,
+          "running": 1
+        },
+        "traffic": {
+          "tx": {
+            "bytes": 38120177149,
+            "packets": 106567888,
+            "dropped": 76843
+          },
+          "rx": {
+            "bytes": 11887626525,
+            "packets": 155716256
+          },
+          "forward": {
+            "bytes": 1440073175287,
+            "packets": 2509717189
+          },
+          "mgmt_tx": {
+            "bytes": 42488064538,
+            "packets": 113059747
+          },
+          "mgmt_rx": {
+            "bytes": 198525510834,
+            "packets": 485269029
+          }
+        }
+      },
+      "nodeinfo": {
+        "node_id": "daff61000402",
+        "network": {
+          "mac": "da:ff:61:00:04:02",
+          "addresses": [
+            "fe80::d8ff:61ff:fe00:404",
+            "2001:67c:2ed8:6100::4",
+            "fe80::8092:93ff:feab:8497",
+            "fd01:67c:2ed8:6100::4"
+          ],
+          "mesh": {
+            "ffda-bat": {
+              "interfaces": {
+                "tunnel": [
+                  "da:ff:61:00:04:05",
+                  "da:ff:61:01:04:03",
+                  "da:ff:61:00:04:03"
+                ]
+              }
+            }
+          },
+          "mesh_interfaces": null
+        },
+        "system": {},
+        "hostname": "gw04.darmstadt.freifunk.net",
+        "software": {
+          "autoupdater": {},
+          "batman-adv": {
+            "version": "2017.3"
+          },
+          "fastd": {
+            "enabled": true,
+            "version": "v18"
+          },
+          "firmware": {
+            "base": "Debian",
+            "release": "8.9"
+          },
+          "status-page": {
+            "api": 0
+          }
+        },
+        "hardware": {
+          "nproc": 2
+        },
+        "vpn": true
+      }
+    },
+    {
+      "firstseen": "2015-10-16T11:00:02+0000",
+      "lastseen": "2017-10-21T00:34:00+0200",
+      "flags": {
+        "online": true,
+        "gateway": false
+      },
+      "statistics": {
+        "node_id": "c04a00dd692a",
+        "clients": 1,
+        "rootfs_usage": 0.0904,
+        "loadavg": 0.45,
+        "memory_usage": 0.2151159077846606,
+        "uptime": 1315645.39,
+        "idletime": 1112272.8,
+        "gateway": "da:ff:61:00:06:05",
+        "processes": {
+          "total": 48,
+          "running": 1
+        },
+        "mesh_vpn": {
+          "groups": {
+            "backbone": {
+              "peers": {
+                "gw01": null,
+                "gw02": null,
+                "gw03": null,
+                "gw04": null,
+                "gw05": null,
+                "gw06": {
+                  "established": 1315590.654
+                }
+              },
+              "groups": null
+            }
+          }
+        },
+        "traffic": {
+          "tx": {
+            "bytes": 545671851,
+            "packets": 4767168,
+            "dropped": 4029
+          },
+          "rx": {
+            "bytes": 13843020004,
+            "packets": 171323058
+          },
+          "forward": {
+            "bytes": 430980,
+            "packets": 717
+          },
+          "mgmt_tx": {
+            "bytes": 62298010594,
+            "packets": 135627075
+          },
+          "mgmt_rx": {
+            "bytes": 16151916188,
+            "packets": 48151874
+          }
+        }
+      },
+      "nodeinfo": {
+        "node_id": "c04a00dd692a",
+        "network": {
+          "mac": "c0:4a:00:dd:69:2a",
+          "addresses": [
+            "fd01:67c:2ed8:6100:c24a:ff:fedd:692a",
+            "2001:67c:2ed8:6100:c24a:ff:fedd:692a",
+            "fe80::c24a:ff:fedd:692a"
+          ],
+          "mesh": {
+            "bat0": {
+              "interfaces": {
+                "wireless": [
+                  "02:f3:f6:0d:35:21",
+                  "02:f3:f6:0d:35:25"
+                ],
+                "other": [
+                  "02:f3:f6:0d:35:23"
+                ],
+                "tunnel": [
+                  "02:f3:f6:0d:35:27"
+                ]
+              }
+            }
+          },
+          "mesh_interfaces": null
+        },
+        "system": {
+          "site_code": "ffda"
+        },
+        "hostname": "64367-blockheizkraftwerk",
+        "location": {
+          "longitude": 8.70046645,
+          "latitude": 49.83675075
+        },
+        "software": {
+          "autoupdater": {
+            "enabled": true,
+            "branch": "stable"
+          },
+          "batman-adv": {
+            "version": "2017.2",
+            "compat": 15
+          },
+          "fastd": {
+            "enabled": true,
+            "version": "v18"
+          },
+          "firmware": {
+            "base": "gluon-v2017.1.3",
+            "release": "1.0.3"
+          },
+          "status-page": {
+            "api": 1
+          }
+        },
+        "hardware": {
+          "nproc": 1,
+          "model": "TP-Link TL-WDR3600 v1"
+        },
+        "vpn": false
+      }
+    },
+    {
+      "firstseen": "2015-11-23T18:34:02+0000",
+      "lastseen": "2017-10-21T00:33:58+0200",
+      "flags": {
+        "online": true,
+        "gateway": false
+      },
+      "statistics": {
+        "node_id": "60e3272f92b2",
+        "clients": 13,
+        "rootfs_usage": 0.0461,
+        "loadavg": 0.16,
+        "memory_usage": 0.5067692700683313,
+        "uptime": 258685.82,
+        "idletime": 216880.18,
+        "gateway": "da:ff:61:00:05:05",
+        "processes": {
+          "total": 49,
+          "running": 1
+        },
+        "traffic": {
+          "tx": {
+            "bytes": 5376193686,
+            "packets": 27358154,
+            "dropped": 14400
+          },
+          "rx": {
+            "bytes": 50465521558,
+            "packets": 79130478
+          },
+          "forward": {
+            "bytes": 312932526095,
+            "packets": 411856991
+          },
+          "mgmt_tx": {
+            "bytes": 10628504028,
+            "packets": 22749336
+          },
+          "mgmt_rx": {
+            "bytes": 7092102706,
+            "packets": 15219673
+          }
+        }
+      },
+      "nodeinfo": {
+        "node_id": "60e3272f92b2",
+        "network": {
+          "mac": "60:e3:27:2f:92:b2",
+          "addresses": [
+            "fd01:67c:2ed8:6100:62e3:27ff:fe2f:92b2",
+            "fe80::62e3:27ff:fe2f:92b2",
+            "2001:67c:2ed8:6100:62e3:27ff:fe2f:92b2"
+          ],
+          "mesh": {
+            "bat0": {
+              "interfaces": {
+                "other": [
+                  "42:a7:24:29:54:dc",
+                  "42:a7:24:29:54:d8",
+                  "42:a7:24:29:54:db"
+                ]
+              }
+            }
+          },
+          "mesh_interfaces": null
+        },
+        "system": {
+          "site_code": "ffda"
+        },
+        "hostname": "64367-tagungshotel02",
+        "software": {
+          "autoupdater": {
+            "enabled": true,
+            "branch": "stable"
+          },
+          "batman-adv": {
+            "version": "2017.2",
+            "compat": 15
+          },
+          "fastd": {
+            "version": "v18"
+          },
+          "firmware": {
+            "base": "gluon-v2017.1.3",
+            "release": "1.0.3"
+          },
+          "status-page": {
+            "api": 1
+          }
+        },
+        "hardware": {
+          "nproc": 1,
+          "model": "TP-Link Archer C7 v2"
+        },
+        "vpn": false
+      }
+    }
+  ]
+}
