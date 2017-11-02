@@ -2,7 +2,7 @@ import ipaddress
 import unittest
 from datetime import datetime
 
-from pymeshviewer.nodelist.node import Node, Nodeinfo, System, Hardware, Software, StatusPage, Firmware, MeshVPNPeer, \
+from pymeshviewer.node import Node, Nodeinfo, System, Hardware, Software, StatusPage, Firmware, MeshVPNPeer, \
     MeshVPNPeerGroup, MeshVPN, Traffic, Processes, Statistics, Mesh, Network, Location, Autoupdater, BatmanAdv, Fastd
 
 

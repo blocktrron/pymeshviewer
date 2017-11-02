@@ -1,7 +1,7 @@
 import json
 
-from pymeshviewer.nodelist.node import *
-from pymeshviewer.nodelist.nodelist import Nodelist
+from pymeshviewer.node import *
+from pymeshviewer.nodesjson import NodesJSON
 from pymeshviewer.parser import parse_datetime
 
 
@@ -21,14 +21,14 @@ def parse_node(node_dict: dict) -> Node:
     return output
 
 
-def parse_nodes_json(nodes_str: str) -> Nodelist:
+def parse_nodes_json(nodes_str: str) -> NodesJSON:
     """
     Parses the provided nodelist json in ffrgb-meshviewer format
     :param nodes_str: nodelist json
     :return: a Nodelist object containing the information from the input
     """
     root_obj = json.loads(nodes_str)
-    return Nodelist(list(map(lambda x: parse_node(x), root_obj["nodes"])), root_obj["version"], parse_datetime(
+    return NodesJSON(list(map(lambda x: parse_node(x), root_obj["nodes"])), root_obj["version"], parse_datetime(
         root_obj["timestamp"]))
 
 

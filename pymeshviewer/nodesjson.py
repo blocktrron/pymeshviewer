@@ -3,10 +3,10 @@ from typing import List, Dict, Optional
 
 from pymeshviewer import Protocol
 from pymeshviewer.graph import NodeGraph
-from pymeshviewer.nodelist.node import Neighbour, Node
+from pymeshviewer.node import Neighbour, Node
 
 
-class Nodelist:
+class NodesJSON:
     def __init__(self, nodes: List[Node], version: int, timestamp: datetime):
         """
         Constructor for a Nodelist
