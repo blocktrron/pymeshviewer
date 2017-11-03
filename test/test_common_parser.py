@@ -1,6 +1,6 @@
 import unittest
 
-from pymeshviewer.parser.nodesjson import parse_datetime
+from pymeshviewer.parser import parse_datetime
 
 
 class CommonParserTest(unittest.TestCase):

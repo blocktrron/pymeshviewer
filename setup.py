@@ -32,6 +32,6 @@ setup(
         'Programming Language :: Python :: 3.6',
     ],
     keywords='development meshviewer freifunk',
-    packages=['pymeshviewer', 'pymeshviewer.graph', 'pymeshviewer.nodelist', 'pymeshviewer.parser'],
+    packages=['pymeshviewer'],
     install_requires=[],
 )

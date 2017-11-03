@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from pymeshviewer.parser.graph import parse_graph_json
+from pymeshviewer.parser import parse_graph_json
 
 
 class NodegraphParserTest(unittest.TestCase):

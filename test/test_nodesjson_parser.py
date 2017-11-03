@@ -2,8 +2,7 @@ import ipaddress
 import os
 import unittest
 
-from pymeshviewer.parser.nodesjson import parse_datetime
-from pymeshviewer.parser.nodesjson import parse_nodes_json
+from pymeshviewer.parser import parse_datetime, parse_nodes_json
 
 
 class NodelistParserTest(unittest.TestCase):

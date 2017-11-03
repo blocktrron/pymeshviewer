@@ -63,13 +63,19 @@ class Processes:
 
 
 class Statistics:
-    def __init__(self, node_id: str, clients: int, rootfs_usage: float, loadavg: float, memory_usage: float,
-                 uptime: int, idletime: int, gateway: str, processes: Processes, mesh_vpn: MeshVPN,
-                 tx: Traffic, rx: Traffic, forward: Traffic, mgmt_tx: Traffic, mgmt_rx: Traffic):
+    def __init__(self, node_id: str, clients: int = None, clients_wifi24: int = None, clients_wifi5: int = None,
+                 clients_other: int = None, rootfs_usage: float = None, loadavg: float = None,
+                 memory_usage: float = None, uptime: int = None, idletime: int = None, gateway: str = None,
+                 processes: Processes = None, mesh_vpn: MeshVPN = None,
+                 tx: Traffic = None, rx: Traffic = None, forward: Traffic = None, mgmt_tx: Traffic = None,
+                 mgmt_rx: Traffic = None):
         """
         Constructor for a Statistics object
         :param node_id: node_id of node
         :param clients: total number of clients
+        :type clients_wifi24: 2.4 GHz WiFi clients
+        :type clients_wifi5: 5 GHz WiFi clients
+        :type clients_other: Other clients
         :param rootfs_usage: rootfs usage (0.0 - 1.0)
         :param loadavg: average load
         :param memory_usage: memory usage (0.0 - 1.0)
@@ -86,6 +92,9 @@ class Statistics:
         """
         self.node_id = node_id
         self.clients = clients
+        self.clients_wifi24 = clients_wifi24
+        self.clients_wifi5 = clients_wifi5
+        self.clients_other = clients_other
         self.rootfs_usage = rootfs_usage
         self.loadavg = loadavg
         self.memory_usage = memory_usage
@@ -290,9 +299,8 @@ class Location:
 
 
 class Nodeinfo:
-    def __init__(self, node_id: str, network: Network, system: System, hostname: str, software: Software,
-                 hardware: Hardware,
-                 vpn: bool, location: Location = None):
+    def __init__(self, node_id: str, network: Network, system: System, hostname: str, vpn: bool,
+                 software: Software = None, hardware: Hardware = None, location: Location = None):
         """
         Constructor for Nodeinfo object
         :param node_id: nodes node_id
@@ -333,7 +341,7 @@ class Neighbour:
 
 class Node:
     def __init__(self, firstseen: datetime, lastseen: datetime, online: bool, gateway: bool, statistics: Statistics,
-                 nodeinfo: Nodeinfo, neighbours: List[str] = None):
+                 nodeinfo: Nodeinfo, neighbours: List[Neighbour] = None):
         """
         Constructor for Node object
         :param firstseen: datetime of nodes first sight
@@ -360,8 +368,11 @@ class Node:
         Return VPN enabled status
         :return: vpn enabled status
         """
-        if self.nodeinfo.software.fastd.enabled is True:
-            return True
+        try:
+            if self.nodeinfo.software.fastd.enabled is True:
+                return True
+        except AttributeError as e:
+            pass
         return False
 
     @property
@@ -370,10 +381,14 @@ class Node:
         Return VPN established status
         :return: vpn established status
         """
-        if self.statistics.mesh_vpn is None:
+        if self.nodeinfo.vpn:
             return False
-        for k, v in self.statistics.mesh_vpn.groups.items():
-            for k, v in v.peers.items():
-                if v and v.established is True:
-                    return True
+        if self.statistics.mesh_vpn is not None:
+            for k, v in self.statistics.mesh_vpn.groups.items():
+                for k, v in v.peers.items():
+                    if v and v.established is True:
+                        return True
+        for n in self.neighbours:
+            if n.vpn:
+                return True
         return False
