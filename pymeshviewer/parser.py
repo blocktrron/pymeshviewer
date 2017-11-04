@@ -44,8 +44,8 @@ def parse_location(location_dict: dict) -> Location:
     :return: a Location object containing the information from the input
     """
     output = Location()
-    output.latitude = location_dict["latitude"]
-    output.longitude = location_dict["longitude"]
+    output.latitude = location_dict.get("latitude", 0)
+    output.longitude = location_dict.get("longitude", 0)
     return output
 
 
@@ -357,7 +357,7 @@ def parse_meshviewer_node(node_dict: dict) -> Node:
                             clients_wifi5=node_dict["clients_wifi5"],
                             clients_other=node_dict["clients_other"],
                             rootfs_usage=node_dict.get("rootfs_usage", 0),
-                            loadavg=node_dict["loadavg"],
+                            loadavg=node_dict.get("loadavg", None),
                             memory_usage=node_dict["memory_usage"],
                             uptime=int((parse_datetime(node_dict["lastseen"]) - parse_datetime(
                                 node_dict["uptime"])).total_seconds()),
@@ -369,7 +369,7 @@ def parse_meshviewer_node(node_dict: dict) -> Node:
         location = parse_location(node_dict["location"])
     nodeinfo = Nodeinfo(node_id=node_dict["node_id"],
                         network=parse_network(node_dict["network"]),
-                        system=System(site_code=node_dict["site_code"]),
+                        system=System(site_code=node_dict.get("site_code", None)),
                         hostname=node_dict["hostname"],
                         location=location,
                         software=Software(autoupdater=autoupdater,
