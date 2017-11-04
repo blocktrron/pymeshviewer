@@ -1,6 +1,7 @@
-from typing import Dict, Optional, List
+from typing import Dict, Optional, List, Tuple
 
 from pymeshviewer.node import Node
+from pymeshviewer.util import calculate_distance
 
 
 class NodeCollection:
@@ -67,6 +68,26 @@ class NodeCollection:
                 models[model] = 0
             models[model] += 1
         return models
+
+    def get_closest_node(self, latitude, longitude) -> Tuple[Node, float]:
+        """
+        Returns the closest node and the distance relative to provided coordinates
+        :param latitude: latitude
+        :param longitude: longitude
+        :return: tuple consisting of closest node and distance in km
+        """
+        closest = None
+        closest_distance = None
+        for node in self.nodes:
+            if node.nodeinfo.location is None:
+                continue
+            distance = calculate_distance(latitude, longitude, node.nodeinfo.location.latitude,
+                                          node.nodeinfo.location.longitude)
+            if closest_distance is None or closest_distance > distance:
+                closest_distance = distance
+                closest = node
+
+        return closest, closest_distance
 
     def get_node(self, node_id: str) -> Optional[Node]:
         """
