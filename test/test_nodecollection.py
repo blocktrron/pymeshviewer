@@ -26,3 +26,17 @@ class NodecollectionTest(unittest.TestCase):
 
     def test_offline_nodes(self):
         self.assertEqual(len(self.meshviewer_json.offline), 0)
+
+    def test_get_hostname(self):
+        self.assertEqual(len(self.meshviewer_json.get_hostname("invalid")), 0)
+        self.assertEqual(self.meshviewer_json.get_hostname("e"),
+                         [self.meshviewer_json.get_node("60e3272f92b2"),
+                          self.meshviewer_json.get_node("c04a00dd692a"),
+                          self.meshviewer_json.get_node("daff61000302"),
+                          self.meshviewer_json.get_node("daff61000402")])  # Check sorting
+        self.assertEqual(self.meshviewer_json.get_hostname("tagungshotel"),
+                         [self.meshviewer_json.get_node("60e3272f92b2")])
+        self.assertEqual(self.meshviewer_json.get_hostname("64367-tagungshotel02"),
+                         [self.meshviewer_json.get_node("60e3272f92b2")])
+        self.assertEqual(self.meshviewer_json.get_hostname("64367-tagungshotel02 "), [])
+        self.assertEqual(self.meshviewer_json.get_hostname("block"), [self.meshviewer_json.get_node("c04a00dd692a")])

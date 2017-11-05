@@ -115,3 +115,14 @@ class NodeCollection:
             if node.nodeinfo.node_id == node_id:
                 return node
         return None
+
+    def get_hostname(self, hostname: str) -> List[Node]:
+        """
+        Returns all nodes which hostname contain a specified string as a List
+        :param hostname: hostname of desired node(s)
+        :return: list of nodes with specified hostname
+        """
+        nodes = [n for n in self.nodes if hostname in n.nodeinfo.hostname]
+        sorted_x = sorted(nodes,
+                          key=lambda n: len(n.nodeinfo.hostname) - len(hostname) * n.nodeinfo.hostname.count(hostname))
+        return sorted_x
