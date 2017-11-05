@@ -17,6 +17,14 @@ class NodeCollection:
         return len(self.nodes)
 
     @property
+    def online(self) -> List[Node]:
+        return [n for n in self.nodes if n.online]
+
+    @property
+    def offline(self) -> List[Node]:
+        return [n for n in self.nodes if not n.online]
+
+    @property
     def models(self) -> Dict[str, Node]:
         """
         Nodes by their models
@@ -69,13 +77,21 @@ class NodeCollection:
             models[model] += 1
         return models
 
-    def get_closest_node(self, latitude, longitude) -> Tuple[Node, float]:
+    def get_closest_node(self, latitude, longitude, online=None) -> Tuple[Node, float]:
         """
         Returns the closest node and the distance relative to provided coordinates
         :param latitude: latitude
         :param longitude: longitude
+        :param online: indicates if the closest online/offline node is looked for, ignores status if unset
         :return: tuple consisting of closest node and distance in km
         """
+        if online is None:
+            nodes = self.nodes
+        elif online is True:
+            nodes = self.online
+        elif online is False:
+            node = self.offline
+
         closest = None
         closest_distance = None
         for node in self.nodes:

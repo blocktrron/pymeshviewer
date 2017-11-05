@@ -19,3 +19,10 @@ class NodecollectionTest(unittest.TestCase):
         node, distance = self.meshviewer_json.get_closest_node(49.835076144, 8.697116375)
         self.assertEqual(node, self.meshviewer_json.get_node("c04a00dd692a"))
         self.assertAlmostEqual(distance, 0.304, 3)
+
+    def test_online_nodes(self):
+        """ Asserts that all offline nodes are returned """
+        self.assertEqual(len(self.meshviewer_json.online), 4)
+
+    def test_offline_nodes(self):
+        self.assertEqual(len(self.meshviewer_json.offline), 0)
