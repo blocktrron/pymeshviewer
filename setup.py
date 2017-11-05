@@ -31,5 +31,5 @@ setup(
     ],
     keywords='development meshviewer freifunk',
     packages=['pymeshviewer'],
-    install_requires=[],
+    install_requires=['requests'],
 )
