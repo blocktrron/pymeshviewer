@@ -368,7 +368,7 @@ def parse_meshviewer_node(node_dict: dict) -> Node:
     if "location" in node_dict:
         location = parse_location(node_dict["location"])
     nodeinfo = Nodeinfo(node_id=node_dict["node_id"],
-                        network=parse_network(node_dict["network"]),
+                        network=parse_network({"addresses": node_dict["addresses"], "mac": node_dict["mac"]}),
                         system=System(site_code=node_dict.get("site_code", None)),
                         hostname=node_dict["hostname"],
                         location=location,

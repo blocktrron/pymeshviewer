@@ -14,15 +14,13 @@
       "memory_usage": 0.34640929437841284,
       "uptime": "2017-10-21T00:33:30+0200",
       "node_id": "daff61000302",
-      "network": {
-        "mac": "da:ff:61:00:03:02",
-        "addresses": [
-          "fe80::4813:f6ff:fe1f:dbe1",
-          "2001:67c:2ed8:6100::3",
-          "fd01:67c:2ed8:6100::3",
-          "fe80::d8ff:61ff:fe00:304"
-        ]
-      },
+      "mac": "da:ff:61:00:03:02",
+      "addresses": [
+        "fe80::4813:f6ff:fe1f:dbe1",
+        "2001:67c:2ed8:6100::3",
+        "fd01:67c:2ed8:6100::3",
+        "fe80::d8ff:61ff:fe00:304"
+      ],
       "site_code": "ffda",
       "hostname": "gw03.darmstadt.freifunk.net",
       "firmware": {
@@ -47,15 +45,13 @@
       "memory_usage": 0.26971274868843076,
       "uptime": "2017-10-28T05:10:22+0200",
       "node_id": "daff61000402",
-      "network": {
-        "mac": "da:ff:61:00:04:02",
-        "addresses": [
-          "fe80::f433:deff:fec5:ca17",
-          "fe80::d8ff:61ff:fe00:404",
-          "2001:67c:2ed8:6100::4",
-          "fd01:67c:2ed8:6100::4"
-        ]
-      },
+      "mac": "da:ff:61:00:04:02",
+      "addresses": [
+        "fe80::f433:deff:fec5:ca17",
+        "fe80::d8ff:61ff:fe00:404",
+        "2001:67c:2ed8:6100::4",
+        "fd01:67c:2ed8:6100::4"
+      ],
       "site_code": "ffda",
       "hostname": "gw04.darmstadt.freifunk.net",
       "firmware": {
@@ -83,14 +79,12 @@
       "gateway_nexthop": "daff61000605",
       "gateway": "daff61000605",
       "node_id": "c04a00dd692a",
-      "network": {
-        "mac": "c0:4a:00:dd:69:2a",
-        "addresses": [
-          "fd01:67c:2ed8:6100:c24a:ff:fedd:692a",
-          "2001:67c:2ed8:6100:c24a:ff:fedd:692a",
-          "fe80::c24a:ff:fedd:692a"
-        ]
-      },
+      "mac": "c0:4a:00:dd:69:2a",
+      "addresses": [
+        "fd01:67c:2ed8:6100:c24a:ff:fedd:692a",
+        "2001:67c:2ed8:6100:c24a:ff:fedd:692a",
+        "fe80::c24a:ff:fedd:692a"
+      ],
       "site_code": "ffda",
       "hostname": "64367-blockheizkraftwerk",
       "location": {
@@ -125,14 +119,12 @@
       "gateway_nexthop": "60e3273a200a",
       "gateway": "daff61000505",
       "node_id": "60e3272f92b2",
-      "network": {
-        "mac": "60:e3:27:2f:92:b2",
-        "addresses": [
-          "fd01:67c:2ed8:6100:62e3:27ff:fe2f:92b2",
-          "fe80::62e3:27ff:fe2f:92b2",
-          "2001:67c:2ed8:6100:62e3:27ff:fe2f:92b2"
-        ]
-      },
+      "mac": "60:e3:27:2f:92:b2",
+      "addresses": [
+        "fd01:67c:2ed8:6100:62e3:27ff:fe2f:92b2",
+        "fe80::62e3:27ff:fe2f:92b2",
+        "2001:67c:2ed8:6100:62e3:27ff:fe2f:92b2"
+      ],
       "site_code": "ffda",
       "hostname": "64367-tagungshotel02",
       "firmware": {
