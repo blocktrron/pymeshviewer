@@ -1,7 +1,6 @@
 import ipaddress
 import json
 from datetime import datetime
-from typing import Dict
 
 from pymeshviewer import Protocol
 from pymeshviewer.graph import Node as GraphNode, LinkType
@@ -53,7 +52,7 @@ def parse_autoupdater(autoupdater_dict: dict):
     return Autoupdater(enabled=autoupdater_dict.get("enabled", False), branch=autoupdater_dict.get("branch", None))
 
 
-def parse_firmware(firmware_dict: Dict[str, str]):
+def parse_firmware(firmware_dict: dict):
     return Firmware(base=firmware_dict.get("base", None), release=firmware_dict.get("release", None))
 
 

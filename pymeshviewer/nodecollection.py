@@ -1,11 +1,9 @@
-from typing import Dict, Optional, List, Tuple
-
 from pymeshviewer.node import Node
 from pymeshviewer.util import calculate_distance
 
 
 class NodeCollection:
-    def __init__(self, nodes: List[Node]):
+    def __init__(self, nodes: list):
         self.nodes = nodes
 
     @property
@@ -17,15 +15,15 @@ class NodeCollection:
         return len(self.nodes)
 
     @property
-    def online(self) -> List[Node]:
+    def online(self) -> list:
         return [n for n in self.nodes if n.online]
 
     @property
-    def offline(self) -> List[Node]:
+    def offline(self) -> list:
         return [n for n in self.nodes if not n.online]
 
     @property
-    def models(self) -> Dict[str, Node]:
+    def models(self) -> dict:
         """
         Nodes by their models
         :return: nodes ordered by model
@@ -50,7 +48,7 @@ class NodeCollection:
         return nodes
 
     @property
-    def established_vpn_connection(self) -> List[Node]:
+    def established_vpn_connection(self) -> list:
         """
         Nodes with established vpn connection
         :return: nodes with established vpn connection
@@ -62,7 +60,7 @@ class NodeCollection:
         return nodes
 
     @property
-    def model_stats(self) -> Dict[str, int]:
+    def model_stats(self) -> dict:
         """
         Models and their quantity
         :return: models and their quantity
@@ -77,7 +75,7 @@ class NodeCollection:
             models[model] += 1
         return models
 
-    def get_closest_node(self, latitude, longitude, online=None) -> Tuple[Node, float]:
+    def get_closest_node(self, latitude, longitude, online=None) -> tuple:
         """
         Returns the closest node and the distance relative to provided coordinates
         :param latitude: latitude
@@ -105,7 +103,7 @@ class NodeCollection:
 
         return closest, closest_distance
 
-    def get_node(self, node_id: str) -> Optional[Node]:
+    def get_node(self, node_id: str) -> Node:
         """
         Returns node identified by its node_id
         :param node_id: node_id of desired node
@@ -116,7 +114,7 @@ class NodeCollection:
                 return node
         return None
 
-    def get_hostname(self, hostname: str) -> List[Node]:
+    def get_hostname(self, hostname: str) -> list:
         """
         Returns all nodes which hostname contain a specified string as a List
         :param hostname: hostname of desired node(s)

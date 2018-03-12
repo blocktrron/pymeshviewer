@@ -1,14 +1,13 @@
 from datetime import datetime
-from typing import List
 
 from pymeshviewer import Protocol
 from pymeshviewer.graph import NodeGraph
-from pymeshviewer.node import Neighbour, Node
+from pymeshviewer.node import Neighbour
 from pymeshviewer.nodecollection import NodeCollection
 
 
 class NodesJSON(NodeCollection):
-    def __init__(self, nodes: List[Node], version: int, timestamp: datetime):
+    def __init__(self, nodes: list, version: int, timestamp: datetime):
         """
         Constructor for a Nodelist
         :param nodes: list of nodes
@@ -21,7 +20,6 @@ class NodesJSON(NodeCollection):
         self.timestamp = None
         if timestamp is not None:
             self.timestamp = datetime.now()
-
 
     def load_nodegraph(self, graph: NodeGraph):
         """

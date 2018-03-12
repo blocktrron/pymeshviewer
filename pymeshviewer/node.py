@@ -1,6 +1,4 @@
-import ipaddress
 from datetime import datetime
-from typing import List, Dict
 
 from pymeshviewer import Protocol
 
@@ -17,7 +15,7 @@ class MeshVPNPeer:
 
 
 class MeshVPNPeerGroup:
-    def __init__(self, peers: Dict[str, MeshVPNPeer] = None):
+    def __init__(self, peers: dict = None):
         """
         Constructor for a MeshVPNPeerGroup object
         :param peers: dict of peers
@@ -28,7 +26,7 @@ class MeshVPNPeerGroup:
 
 
 class MeshVPN:
-    def __init__(self, groups: Dict[str, MeshVPNPeerGroup] = None):
+    def __init__(self, groups: dict = None):
         """
         Constructor for a MeshVPN object
         :param groups: dict of groups
@@ -202,7 +200,7 @@ class Software:
 
 
 class Mesh:
-    def __init__(self, wireless: List[str] = None, tunnel: List[str] = None, other: List[str] = None):
+    def __init__(self, wireless: list = None, tunnel: list = None, other: list = None):
         """
         Constructor for Mesh object
         :param wireless: list of wireless mesh interfaces
@@ -221,7 +219,7 @@ class Mesh:
 
 
 class Network:
-    def __init__(self, mac: str, addresses: List[ipaddress._IPAddressBase], mesh: Dict[str, Mesh]):
+    def __init__(self, mac: str, addresses: list, mesh: dict):
         """
         Constructor for Network object
         :param mac: primary mac address of node
@@ -237,7 +235,7 @@ class Network:
         self.mesh = mesh
 
     @property
-    def v6_addresses(self) -> List[ipaddress.IPv6Address]:
+    def v6_addresses(self) -> list:
         """
         Nodes IPv6 addresses
         :return: ipv6 addresses of node
@@ -249,7 +247,7 @@ class Network:
         return out
 
     @property
-    def v6_global(self) -> List[ipaddress.IPv6Address]:
+    def v6_global(self) -> list:
         """
         Nodes globally routed IPv6 addresses
         :return: globally routed IPv6 addresses of node
@@ -261,7 +259,7 @@ class Network:
         return out
 
     @property
-    def v6_ula(self) -> List[ipaddress.IPv6Address]:
+    def v6_ula(self) -> list:
         """
         Nodes ula IPv6 addresses
         :return: ULA IPv6 addresses of node
@@ -273,7 +271,7 @@ class Network:
         return out
 
     @property
-    def v6_link_local(self) -> List[ipaddress.IPv6Address]:
+    def v6_link_local(self) -> list:
         """
         Nodes Link-Local IPv6 addresses
         :return: Link-Local IPv6 addresses of node
@@ -341,7 +339,7 @@ class Neighbour:
 
 class Node:
     def __init__(self, firstseen: datetime, lastseen: datetime, online: bool, gateway: bool, statistics: Statistics,
-                 nodeinfo: Nodeinfo, neighbours: List[Neighbour] = None):
+                 nodeinfo: Nodeinfo, neighbours: list = None):
         """
         Constructor for Node object
         :param firstseen: datetime of nodes first sight

@@ -1,13 +1,10 @@
 from datetime import datetime
-from typing import List
 
-from pymeshviewer.graph import Link
-from pymeshviewer.node import Node
 from pymeshviewer.nodecollection import NodeCollection
 
 
 class MeshviewerJSON(NodeCollection):
-    def __init__(self, timestamp: datetime, nodes: List[Node], links: List[Link]):
+    def __init__(self, timestamp: datetime, nodes: list, links: list):
         """
         Constructor for a MeshviewerJSON object
         :param timestamp: timestamp of MeshviewerJSON
