@@ -357,7 +357,7 @@ def parse_meshviewer_node(node_dict: dict) -> Node:
                             clients_other=node_dict["clients_other"],
                             rootfs_usage=node_dict.get("rootfs_usage", 0),
                             loadavg=node_dict.get("loadavg", None),
-                            memory_usage=node_dict["memory_usage"],
+                            memory_usage=node_dict.get("memory_usage", -1),
                             uptime=int((parse_datetime(node_dict["lastseen"]) - parse_datetime(
                                 node_dict["uptime"])).total_seconds()),
                             idletime=0,
