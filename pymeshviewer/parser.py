@@ -375,7 +375,7 @@ def parse_meshviewer_node(node_dict: dict) -> Node:
                                           firmware=firmware),
                         hardware=Hardware(model=node_dict.get("model", None),
                                           nproc=node_dict["nproc"]),
-                        vpn=node_dict["vpn"])
+                        vpn=node_dict.get("vpn", None))
     return Node(firstseen=parse_datetime(node_dict["firstseen"], ),
                 lastseen=parse_datetime(node_dict["lastseen"]),
                 online=node_dict["is_online"],
