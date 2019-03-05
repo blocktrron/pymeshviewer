@@ -6,7 +6,7 @@ here = path.abspath(path.dirname(__file__))
 
 setup(
     name='pymeshviewer',
-    version='0.1.2',
+    version='0.1.3',
 
     description='Parser for Meshviewer nodelists and topology files',
 
